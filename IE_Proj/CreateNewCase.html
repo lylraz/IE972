@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa">
+    <head>
+        <meta charset="UTF-8">
+        <title> ثبت مورد جدید </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/CreateNewCase.css">
+        <script type="text/javascript" src="javascript/Global.js"> </script>
+        <script type="text/javascript" src="javascript/CreateNewCase.js"> </script>
+    </head>
+
+    <body>
+        <div id="nav">
+            <div id="closed_nav">
+                <li onclick="Open_nav();" id="arrow_left" class="fa fa-caret-left"></li>
+            </div>
+            <ul id="nav_bar">
+                <li onclick="close_nav();" id="arrow_right" class="fa fa-caret-right"></li>
+                <li onclick="Open_ProfileEdit();" id="profile" class="profile-container">
+                    <img id="profilePic" src="Image/user-icon.png" alt="profilePic">
+                    <h3 id="profileName"> نام کاربری </h3>
+                </li>
+                <li><a href="Cases.html"> موارد </a></li>
+                <li><a href="CreateNewCase.html" class="active"> ثبت مورد جدید </a></li>
+                <li><a href="Status.html"> مشاهده وضعیت </a></li>
+                <li><a href="Report.html"> گزارش‌گیری </a></li>
+                <li><a href="UsersStatus.html"> مدیریت کاربران </a></li>
+                <li><a href="UserConfirmation.html"> تایید کاربران </a></li>
+                <li><a href="#exit"> خروج </a></li>
+            </ul>
+        </div>
+
+        <div id="page_container">
+            <div class="divContent" id="divContent">
+                <form class="form">
+                    <br>
+                    <div id="firstInput">
+                        <div class="labels"> عنوان </div>
+                        <input class="inputs" type="text" placeholder="عنوان &nbsp" name="title">
+                    </div>
+                    <div id="secondInput">
+                        <div class="labels" id="textLabel"> متن درخواست </div>
+                        <input class="inputs" type="text" placeholder="متن درخواست &nbsp" name="request" id="requestText">
+                    </div>
+
+                    <div>
+                        <div class="labels" id="requestLabel"> نوع درخواست </div>
+                        <select id="requestSelect" name="requestContent">
+                            <option value="complaint" class="sOption"> شکایت </option>
+                            <option value="suggestion"> پیشنهاد </option>
+                            <option value="criticism"> انتقاد </option>
+                            <option value="request"> درخواست </option>
+                        </select>
+                    </div>
+
+                    <div id="thirdInput">
+                        <div class="labels" id="attachFile"> فایل پیوست </div>
+                        <input class="inputs" type="file" accept="*/*" name="attachFile" id="file">
+                    </div>
+
+                    <div>
+                        <div class="labels" id="receiverLabel"> مسئول رسیدگی </div>
+                        <select id="receiverSelect" name="receiverContent">
+                            <option value="DrShams" class="sOption"> دکتر شمس‌فرد </option>
+                            <option value="AghaAmini"> آقای امینی </option>
+                            <option value="AghaGhafouri"> آقای غفوری </option>
+                        </select>
+                    </div>
+
+                </form>
+            </div>
+
+            <button type="submit" id="confirmButton" > ثبت </button>
+        </div>
+
+    </body>
+</html>

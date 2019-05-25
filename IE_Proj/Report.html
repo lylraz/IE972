@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fa">
+    <head>
+        <title> گزارش‌گیری </title>
+        <script src="jquery.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/Report.css">
+        <script type="text/javascript" src="javascript/Global.js"> </script>
+        <script type="text/javascript" src="javascript/Report.js"> </script>
+        <script type="text/javascript" src="data.json"></script>
+    </head>
+
+    <body>
+        <div id="nav">
+            <div id="closed_nav">
+                <li onclick="Open_nav();" id="arrow_left" class="fa fa-caret-left"></li>
+            </div>
+            <ul id="nav_bar">
+                <li onclick="close_nav();" id="arrow_right" class="fa fa-caret-right"></li>
+                <li id="profile" class="profile-container">
+                    <img onclick="Open_ProfileEdit();" id="profilePic" src="Image/user-icon.png" alt="profilePic">
+                    <h3 id="profileName"> نام کاربری </h3>
+                </li>
+                <li><a href="Cases.html"> موارد </a></li>
+                <li><a href="CreateNewCase.html"> ثبت مورد جدید </a></li>
+                <li><a href="Status.html"> مشاهده وضعیت </a></li>
+                <li><a class="active" href="Report.html"> گزارش‌گیری </a></li>
+                <li><a href="UsersStatus.html"> مدیریت کاربران </a></li>
+                <li><a href="UserConfirmation.html"> تایید کاربران </a></li>
+                <li><a href="#exit"> خروج </a></li>
+            </ul>
+        </div>
+
+
+        <div id="page_container" class="page-container">
+            <div>
+                <div class="divContent" id="divContent">
+                    <div id="caption">
+                        <h3>
+                            تفکیک ارسال‌ها بر اساس:
+                        </h3>
+                    </div>
+                    <div id="myTagContainer">
+                        <button class="tag active" id="defaultTab" onclick="filterSelection('all')"> همه ارسال‌ها </button>
+                        <button class="tag" onclick="filterSelection('subject')"> موضوع </button>
+                        <button class="tag" onclick="filterSelection('status')"> وضعیت </button>
+                        <button class="tag" onclick="filterSelection('satisfaction')"> رضایت </button>
+                        <button class="tag" onclick="filterSelection('time')"> بازه زمانی </button>
+                    </div>
+                </div>
+
+
+                <div class="filterContent" id="filterContent">
+                    <div class="filterDiv all">
+                        <div class="numName">
+                            ارسال‌های مدیران:
+                        </div>
+                        <div class="num" id="adminPost">
+                            ۱۵ ارسال
+                        </div>
+                        <div class="numName">
+                            ارسال‌های کاربران:
+                        </div>
+                        <div class="num" id="memberPost">
+                            ۵ مورد
+                        </div>
+                    </div>
+                    <div class="filterDiv subject">
+                        <div class="numName">
+                            انتقاد:
+                        </div>
+                        <div class="num" id="criticism">
+                            ۲ مورد
+                        </div>
+                        <div class="numName">
+                            پیشنهاد:
+                        </div>
+                        <div class="num" id="suggestion">
+                            ۱ مورد
+                        </div>
+                        <div class="numName">
+                            شکایت:
+                        </div>
+                        <div class="num" id="complaint">
+                            ۰ مورد
+                        </div>
+                        <div class="numName">
+                            درخواست:
+                        </div>
+                        <div class="num" id="request">
+                            ۱ مورد
+                        </div>
+                    </div>
+                    <div class="filterDiv status">
+                        <div class="numName">
+                            باز:
+                        </div>
+                        <div class="num" id="open">
+                            ۲ مورد
+                        </div>
+                        <div class="numName">
+                            در حال بررسی:
+                        </div>
+                        <div class="num" id="inQueue">
+                            ۱ مورد
+                        </div>
+                        <div class="numName">
+                            تعویق:
+                        </div>
+                        <div class="num" id="postponed">
+                            ۰ مورد
+                        </div>
+                        <div class="numName">
+                            بسته:
+                        </div>
+                        <div class="num" id="closed">
+                            ۳ مورد
+                        </div>
+                    </div>
+                    <div class="filterDiv satisfaction">
+                        <div class="numName">
+                            رضایت داشته‌اند:
+                        </div>
+                        <div class="num" id="satisfied">
+                            ۵۰ درصد
+                        </div>
+                        <div class="numName">
+                            رضایت نداشته‌اند:
+                        </div>
+                        <div class="num" id="notSatisfied">
+                            ۵۰ درصد
+                        </div>
+                    </div>
+                    <div class="filterDiv time">
+                        <div class="numName">
+                            روز گذشته:
+                        </div>
+                        <div class="num">
+                            0 مورد
+                        </div>
+                        <div class="numName">
+                            هفته گذشته:
+                        </div>
+                        <div class="num">
+                            0 مورد
+                        </div>
+                        <div class="numName">
+                            ماه گذشته:
+                        </div>
+                        <div class="num">
+                            0 مورد
+                        </div>
+                        <div class="numName">
+                            سال گذشته:
+                        </div>
+                        <div class="num">
+                            0 مورد
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            filterSelection("all");
+            var btnContainer = document.getElementById("myTagContainer");
+            var btns = btnContainer.getElementsByClassName("tag");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function() {
+                    var current = document.getElementsByClassName("active");
+                    current[1].className = current[1].className.replace("active", "");
+                    this.className += " active";
+                });
+            }
+        </script>
+    </body>
+
+</html>

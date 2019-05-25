@@ -1,0 +1,119 @@
+@font-face {
+    font-family: vazir;
+    src: url("../Font/Vazir.woff");
+}
+
+@font-face {
+    font-family: vazirBold;
+    src: url("../Font/Vazir-Bold.woff");
+}
+
+body {
+    margin: 0;
+    direction: rtl;
+    font-family: vazir;
+    z-index: -1;
+
+    width: 100%;
+    background-size: cover;
+    background: #DAEDF1 url("../Image/back.jpg") repeat fixed;
+}
+#nav {
+    float: right;
+    position: relative;
+    z-index: 100;
+}
+
+ul {
+    margin: 0;
+    width: 20%;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    list-style-type: none;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
+    background: -webkit-linear-gradient(top, #12444F, #4C90A0);
+    transform: translateX(0);
+    transition-duration: 0.5s;
+}
+
+#closed_nav{
+    margin: 0;
+    width: 2%;
+    padding: 0;
+    height: 100%;
+    position: fixed;
+    list-style-type: none;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
+    background: -webkit-linear-gradient(top, #12444F, #4C90A0);
+    transform: translateX(150%);
+    transition-duration: 0.5s;
+}
+
+#profile {
+    margin-top: 0;
+    margin-bottom: 0;
+    top: 0;
+    padding-top: 20%;
+    padding-bottom: 7%;
+}
+
+#arrow_right{
+    top: 15px;
+    float: left;
+    display: block;
+    font-size: 80px;
+    padding: 5% 0;
+}
+
+#arrow_left{
+    top: 15px;
+    position: fixed;
+    float: right;
+    display: block;
+    font-size: 80px;
+    padding: 5% 0;
+    overflow: auto;
+    margin: 0 50% 0 0;
+}
+
+#profilePic {
+    height: auto;
+    width: 50%;
+    border-radius: 100%;
+    margin-bottom: 0;
+    margin-right: 25%;
+}
+
+#profileName {
+    width: 50%;
+    margin-right: 25%;
+    text-align: center;
+}
+
+li a {
+    display: block;
+    color: whitesmoke;
+    padding: 10px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+li a.active {
+    background-color: #A9CCAB;
+    color: black;
+}
+
+li a:hover:not(.active) {
+    background-color: #143D47;
+    color: white;
+}
+
+.page-container {
+    width: 80%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    padding-bottom: 10%;
+}

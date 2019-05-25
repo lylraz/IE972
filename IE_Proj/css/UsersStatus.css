@@ -1,0 +1,240 @@
+.divContent {
+    float: left;
+    width: 80%;
+    height: 110px;
+    margin: 1% 0 3% 10%;
+    text-align: center;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.20);
+    transform: translateX(0);
+    transition-duration: 0.5s;
+    border: 1px solid cadetblue;
+}
+
+.tag {
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    border-radius: 3px;
+    height: 10%;
+    font-family: vazirBold;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.20);
+    background: #143D47;
+    color: white;
+    font-size: 13px;
+    padding-top: 5px;
+    width: 12%;
+}
+
+.tag:hover {
+    background-color: #27a3a6;
+    cursor: pointer;
+}
+
+.tag.active {
+    background-color: #666;
+    color: white;
+}
+
+/* search */
+
+.cart-search-container {
+    float: left;
+    margin: 3% 0 0 10%;
+
+    width: 80%;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.20);
+    transform: translateX(0);
+    transition-duration: 0.5s;
+    border: 1px solid cadetblue;
+}
+
+.submit-a {
+    float: left;
+    height: 36px;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #aaaaaa;
+}
+
+.submit-a:hover {
+    color: black;
+}
+
+.input-field {
+    font-family: vazir;
+    height: 35px;
+    display: inline-block;
+    float: none;
+    border: none;
+    text-align: right;
+    width: 85%;
+    padding: 5px;
+    outline: none;
+}
+
+.input-field::placeholder {
+    color: lightgrey;
+}
+
+
+/* case */
+.show-users{
+    display: none;
+}
+.show{
+    display: block;
+}
+
+.user-container {
+    float: left;
+    margin: 10px 0 10px 20%;
+    width: 60%;
+    height: 110px;
+    vertical-align: middle;
+    transform: translateX(0);
+    transition-duration: 0.5s;
+}
+
+.user-container .left-side {
+    width: 84%;
+    height: 100%;
+    float: left;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid cadetblue;
+    background-color: white;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.20);
+}
+
+.left-side .information {
+    width: 70%;
+    float: right;
+    display: inline-block;
+}
+
+.left-side span {
+    width: 100%;
+    margin: 5px 0 0 0;
+}
+
+.left-side p {
+    float: right;
+    font-size: 13px;
+    padding: 0;
+    margin: 7px 0 0 0;
+    display: inline-block;
+}
+
+.left-side .t {
+    color: darkgray;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+.left-side .case-container .date {
+    color: darkgray;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.left-side .role {
+    float: right;
+    display: inline-block;
+}
+
+.left-side .name {
+    float: right;
+    display: inline-block;
+    width: 30%;
+}
+
+.user-container .pic-container {
+    width: 60px;
+    float: right;
+    height: 60px;
+    display: block;
+    margin: 4% auto;
+    text-align: center;
+    border-radius: 50%;
+    vertical-align: middle;
+    background-color: white;
+    border: 1px solid cadetblue;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.20);
+}
+
+.pic-container .pic {
+    width: 60px;
+}
+
+.un-read .case-title, .un-read .left-side {
+    border: darkslategray solid;
+}
+
+.pic-container:hover, .left-side:hover {
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.a-container{
+    width: 100%;
+}
+.a-container p{
+    float: left;
+    color: #aaaaaa;
+    margin: 10px 0 0 10px;
+    padding: 5px 0;
+}
+
+.a-container p:hover{
+    color: black;
+    cursor: pointer;
+}
+
+/*content */
+
+.content{
+    width: 100%;
+    height: 90px;
+    border-radius: 5px;
+    margin-top: 70px;
+    display: none;
+    background-color: transparent;
+}
+.content .User_email{
+    width: 50%;
+}
+
+.b-container{
+    width: 100%;
+    display: inline-block;
+}
+.b-container button{
+    display: inline-block;
+    float: none;
+    margin: 15px 0 0 10px;
+    border-radius: 7px;
+    height: 30px;
+    border: 2px;
+    cursor: pointer;
+
+    outline: none;
+    font-family: vazirBold;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.20);
+    background: #143D47;
+    color: white;
+    font-size: 13px;
+    padding-top: 4px;
+}
+
+.b-container button:hover{
+    background-color: #A9CCAB;
+    color: black;
+}
+

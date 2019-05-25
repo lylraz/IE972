@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa">
+    <head>
+        <meta charset="UTF-8">
+        <title> اقدام </title>
+        <script src="jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/Action.css">
+        <script type="text/javascript" src="javascript/Action.js"> </script>
+        <script type="text/javascript" src="data.json"></script>
+    </head>
+
+    <body>
+        <a href="Cases.html" id="backButton" > بازگشت </a>
+        <div class="divContent">
+            <form class="form">
+                <br>
+                <div id="firstInput">
+                    <div class="labels"> عنوان </div>
+                    <div class="inputs" id="title"></div>
+                </div>
+                <div id="secondInput">
+                    <div class="labels"> ارسال‌کننده </div>
+                    <div class="inputs" id="sender"></div>
+                </div>
+                <div id="thirdInput">
+                    <div class="labels"> متن درخواست </div>
+                    <div class="inputs" id="request"></div>
+                </div>
+                <div id="fourthInput">
+                    <div class="labels"> پاسخ </div>
+                    <input class="inputs" type="email" placeholder="پاسخ &nbsp" name="answer" id="answer">
+                </div>
+
+                <div class="referTo">
+                    <div class="labels"> ارجاع </div>
+                    <button onclick="referF()" class="referButton" type="button"> <i class="fa fa-caret-down"></i> </button>
+                    <div id="referD" class="referContent">
+                        <a>  دکتر شمس‌فرد </a>
+                        <a> آقای امینی </a>
+                        <a> آقای غقوری </a>
+                    </div>
+                </div>
+
+                <div class="status">
+                    <div class="labels"> وضعیت </div>
+                    <select id="statusSelect" name="statusContent">
+                        <option value="open" class="sOption"> باز </option>
+                        <option value="closed"> بسته </option>
+                        <option value="inQueue"> در حال بررسی </option>
+                        <option value="postponed"> تعویق </option>
+                    </select>
+                </div>
+            </form>
+
+            <button type="submit" id="confirmButton" > ثبت </button>
+        </div>
+    </body>
+
+</html>

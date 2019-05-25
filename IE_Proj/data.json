@@ -1,0 +1,117 @@
+{
+  "members": [
+    {
+      "firstName": "علی",
+      "lastName": "علوی",
+      "email": "ali@yahoo.com",
+      "password": "alavi",
+      "profileName": "AliAlavi",
+      "role": "کاربر عادی"
+    },
+    {
+      "firstName": "سارا",
+      "lastName": "محمدی",
+      "email": "sara@yahoo.com",
+      "password": "mohamadi",
+      "profileName": "SaraMohamadi",
+      "role": "کاربر عادی"
+    },
+    {
+      "firstName": "آقای",
+      "lastName": "امینی",
+      "email": "amini@yahoo.com",
+      "password": "amini",
+      "profileName": "AghaAmini",
+      "role": "کارمند"
+    },
+    {
+      "firstName": "آقای",
+      "lastName": "غفوری",
+      "email": "ghafouri@yahoo.com",
+      "password": "ghafouri",
+      "profileName": "AghaGhafouri",
+      "role": "کارمند"
+    },
+    {
+      "firstName": "دکتر",
+      "lastName": "شمس‌فرد",
+      "email": "shams@yahoo.com",
+      "password": "shams",
+      "profileName": "DrShamsFard",
+      "role": "استاد و مدیر"
+    },
+    {
+      "firstName": "محمد",
+      "lastName": "دیده بان",
+      "email": "mohamad@yahoo.com",
+      "password": "dideBan",
+      "profileName": "mohamadDideban",
+      "role": "کاربر عادی"
+    },
+    {
+      "firstName": "دکتر",
+      "lastName": "قوامی زاده",
+      "email": "ghavami@yahoo.com",
+      "password": "ghavami",
+      "profileName": "DrGhavami",
+      "role": "استاد"
+    }
+  ],
+  "requests": [
+    {
+      "title": "گرم بودن کلاس‌ها",
+      "text": "سلام. با توجه به گرم شدن هوا تقاضا دارم کولرهای دانشکده را در صورت امکان روشن کنید. ممنون.",
+      "sender": "علی علوی",
+      "role": "کاربر عادی",
+      "date": "۱۳۹۷.۲.۲۰",
+      "kind": "درخواست",
+      "status": "بسته",
+      "receiver": "آقای غفوری",
+      "satisfaction": ""
+    },
+    {
+      "title": "سرد بودن کلاس‌ها",
+      "text": "سلام. لطفا فن‌کوئل‌های کلاس‌ها را تعمیر نمایید، در حال حاضر کلاس‌ها خیلی سرد هستند. ممنون",
+      "sender": "علی علوی",
+      "role": "کاربر عادی",
+      "date": "۱۳۹۸.۱.۱۸",
+      "kind": "شکایت",
+      "status": "باز",
+      "receiver": "آقای امینی",
+      "satisfaction": ""
+    },
+    {
+      "title": "رنگ کردن دیوارها",
+      "text": "با توجه به این ک دیوارهای دانشکده چند سالی هست که رنگ نشده‌اند، پیشنهاد می‌دهم دیوارها را دوباره رنگ کنیم.",
+      "sender": "آقای امینی",
+      "role": "کارمند",
+      "date": "۱۳۹۸.۱.۲۳",
+      "kind": "پیشنهاد",
+      "status": "در حال بررسی",
+      "receiver": "دکتر شمس‌فرد",
+      "satisfaction": ""
+    },
+    {
+      "title": "کم بودن ساعات اداری",
+      "text": "کم بودن ساعات اداری دانشکده در زمان انتخاب واحد باعث مشکل در انتخاب واحد می‌شود. لطفا رسیدگی شود.",
+      "sender": "علی علوی",
+      "role": "کاربر عادی",
+      "date": "۱۳۹۸.۱.۲۴",
+      "kind": "انتقاد",
+      "status": "در حال بررسی",
+      "receiver": "دکتر شمس‌فرد",
+      "satisfaction": ""
+    },
+    {
+      "title": "تعمیر درِ نمازخانه",
+      "text": "سلام. لطفا در نمازخانه را عوض کنید. ممنون",
+      "sender": "علی علوی",
+      "role": "کاربر عادی",
+      "date": "۱۳۹۸.۱.۲۸",
+      "kind": "درخواست",
+      "status": "بسته",
+      "receiver": "آقای غفوری",
+      "satisfaction": ""
+    }
+  ]
+}

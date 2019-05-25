@@ -1,0 +1,150 @@
+$(document).ready(function () {
+    $.getJSON("data.json",function (jdata) {
+        // if (jdata.members[userID].role !== "کاربر عادی") {
+        //     $('<li><a href="Report.html"> گزارش‌گیری </a></li>\n' +
+        //         '<li><a href="UsersStatus.html"> مدیریت کاربران </a></li>\n' +
+        //         '<li><a class="active" href="UserConfirmation.html"> تایید کاربران </a></li>'
+        //     ).appendTo('#nav_bar');
+        // }
+        for(var i = 0; i < jdata.requests.length; i++) {
+            if (jdata.requests[i].sender === "علی علوی") {
+                $('<div class="case" id="">\n' +
+                    '                    <div class="case-container">\n' +
+                    '                        <div class="left-side">\n' +
+                    '                            <div class="subject">\n' +
+                    '                                <p class="t"> عنوان: </p>\n' +
+                    '                                <p class="titleC"></p>\n' +
+                    '                            </div>\n' +
+                    '                            <div class="receiver">\n' +
+                    '                                <p class="t"> مسئول رسیدگی: </p>\n' +
+                    '                                <p class="receiverC"></p>\n' +
+                    '                            </div>\n' +
+                    '                            <div class="date-container">\n' +
+                    '                                <p class="date"> تاریخ: </p>\n' +
+                    '                                <p class="dateC"></p>\n' +
+                    '                            </div>\n' +
+                    '                        </div>\n' +
+                    '                        <div class="case-status">\n' +
+                    '                            <p class="statusC"></p>\n' +
+                    '                        </div>\n' +
+                    '                    </div>\n' +
+                    '                    <div class="satisfaction">\n' +
+                    '                        <div class="satisfied" onclick="satisfiedText(this.id)" id="">\n' +
+                    '                            راضی بودم <i class="fa fa-check" aria-hidden="true"></i>\n' +
+                    '                        </div>\n' +
+                    '                        <div class="notSatisfied" onclick="notSatisfiedText(this.id)" id="">\n' +
+                    '                            راضی نبودم <i class="fa fa-times" aria-hidden="true"></i>\n' +
+                    '                        </div>\n' +
+                    '                    </div>\n' +
+                    '                </div>'
+                ).appendTo('#filterContent');
+            }
+        }
+
+        var satisfactions = document.getElementsByClassName("satisfaction");
+        var titleCs = document.getElementsByClassName("titleC");
+        var receiverCs = document.getElementsByClassName("receiverC");
+        var dateCs = document.getElementsByClassName("dateC");
+        var cases_id = document.getElementsByClassName("case");
+        var case_statuss = document.getElementsByClassName("case-status");
+        var statusCs = document.getElementsByClassName("statusC");
+        var satisfieds = document.getElementsByClassName("satisfied");
+        var notSatisfieds = document.getElementsByClassName("notSatisfied");
+        var i_html = 0;
+
+        for(var i = 0; i < jdata.requests.length; i++) {
+            if (jdata.requests[i].sender === "علی علوی") {
+                if (jdata.requests[i].status !=="بسته") {
+                    satisfactions[i_html].style.display = "none";
+                    case_statuss[i_html].className = "case-status "+"notClosed";
+                } else {
+                    case_statuss[i_html].className = "case-status "+"closed";
+                }
+                titleCs[i_html].innerHTML = jdata.requests[i].title;
+                receiverCs[i_html].innerHTML = jdata.requests[i].receiver;
+                dateCs[i_html].innerHTML = jdata.requests[i].date;
+                statusCs[i_html].innerHTML = jdata.requests[i].status;
+                cases_id[i_html].id = ""+i_html;
+                satisfieds[i_html].id = "satisfied"+i_html;
+                notSatisfieds[i_html].id = "notSatisfied"+i_html;
+                i_html++;
+            }
+        }
+    })
+});
+
+function filterByStatus() {
+    var input, filter, cases, statuses, i, txtValue, p;
+    input = document.getElementById("statusInput");
+    filter = input.value;
+    cases = document.getElementsByClassName("case");
+    statuses = document.getElementsByClassName("case-status");
+    for (i = 0; i < statuses.length; i++) {
+        p = statuses[i].getElementsByTagName("p")[0];
+        if (p) {
+            txtValue = p.innerText;
+            if (txtValue.indexOf(filter) > -1) {
+                cases[i].style.display = "";
+            } else {
+                cases[i].style.display = "none";
+            }
+        }
+    }
+}
+
+function filterByReceiver() {
+    var input, filter, cases, receivers, i, txtValue, p, p2;
+    input = document.getElementById("receiverInput");
+    filter = input.value;
+    cases = document.getElementsByClassName("case");
+    receivers = document.getElementsByClassName("receiver");
+    for (i = 0; i < receivers.length; i++) {
+        p = receivers[i].getElementsByTagName("p")[1];
+        if (p) {
+            txtValue = p.innerText;
+            if (txtValue.indexOf(filter) > -1) {
+                cases[i].style.display = "";
+            } else {
+                cases[i].style.display = "none";
+            }
+        }
+    }
+}
+
+function satisfiedText(id) {
+    var index = id.toString().lastIndexOf('d');
+    var newID = id.toString().substr(index+1);
+    document.getElementById("satisfied"+newID).style.backgroundColor = "darkgreen";
+    document.getElementById("satisfied"+newID).style.color = "white";
+    document.getElementById("notSatisfied"+newID).style.display = "none";
+}
+
+function notSatisfiedText(id) {
+    var index = id.toString().lastIndexOf('d');
+    var newID = id.toString().substr(index+1);
+    document.getElementById("notSatisfied"+newID).style.backgroundColor = "darkred";
+    document.getElementById("notSatisfied"+newID).style.color = "white";
+    document.getElementById("satisfied"+newID).style.display = "none";
+}
+
+function close_nav(){
+    nav = document.getElementById("nav_bar");
+    nav.style.transform ='translateX(100%)' ;
+    nav1 = document.getElementById("closed_nav");
+    nav1.style.transform ='translateX(50%)' ;
+    div1 = document.getElementById("divContent");
+    div1.style.marginRight = '3%';
+    div2 = document.getElementById("filterContent");
+    div2.style.marginRight = '3%';
+}
+
+function Open_nav(){
+    nav = document.getElementById("closed_nav");
+    nav.style.transform ='translateX(150%)' ;
+    nav1 = document.getElementById("nav_bar");
+    nav1.style.transform ='translateX(0)' ;
+    div1 = document.getElementById("divContent");
+    div1.style.marginRight = '11%';
+    div2 = document.getElementById("filterContent");
+    div2.style.marginRight = '11%';
+}

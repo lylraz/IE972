@@ -1,0 +1,206 @@
+@font-face {
+    font-family: vazir;
+    src: url("../Font/Vazir.woff");
+}
+
+@font-face {
+    font-family: vazirBold;
+    src: url("../Font/Vazir-Bold.woff");
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    direction: rtl;
+    font-family: vazir;
+    z-index: 0;
+    width: 100%;
+    background: rgb(18,68,79);
+    background: linear-gradient(90deg, rgba(18,68,79,1) 18%, rgba(76,144,160,1) 67%);
+}
+
+.divContent {
+    margin-top: 5%;
+    margin-bottom: 3%;
+    margin-right: 25%;
+    width: 50%;
+    height: 85%;
+    padding-top: 0;
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.35);
+}
+
+.labels {
+    width: 15%;
+    height: 5%;
+    color: black;
+    font-size: 12px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    margin-top: 4.5%;
+    margin-right: 10%;
+    position: absolute;
+}
+
+.inputs {
+    margin-top: 5%;
+    margin-right: 30%;
+    width: 50%;
+    height: 5%;
+    padding-right: 10px;
+    vertical-align: middle;
+    line-height: 30px;
+    text-align: right;
+    font-size: 10px;
+    border: 1px solid #165761;
+    outline: none;
+    border-radius: 10px;
+    position: absolute;
+}
+
+::placeholder {
+    color: rgb(202, 202, 202);
+    font-family: vazir;
+}
+
+#firstInput {
+    margin-top: 6%;
+}
+
+#secondInput {
+    margin-top: 13%;
+}
+
+#thirdInput {
+    margin-top: 20%;
+}
+
+#fourthInput {
+    margin-top: 31.5%;
+}
+
+#request {
+    height: 10%;
+}
+
+#answer {
+    height: 10%;
+}
+
+.referTo {
+    margin-top: 44%;
+}
+
+.referButton {
+    background: white;
+    color: gray;
+    cursor: pointer;
+    text-align: left;
+    padding-right: 1px;
+    margin-top: 5%;
+    margin-right: 30%;
+    width: 52%;
+    height: 5%;
+    font-size: 10px;
+    outline: none;
+    border-radius: 10px;
+    position: absolute;
+    border: 1px solid #165761;
+}
+
+.referButton:hover, .referButton:focus {
+    background-color: #dcecf6
+}
+
+.referContent {
+    display: none;
+    position: absolute;
+    background-color: whitesmoke;
+    width: 52%;
+    margin-right: 30%;
+    overflow: auto;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    height: 18%;
+    margin-top: 8.5%;
+}
+
+.referContent a {
+    color: black;
+    padding: 3.5% 4%;
+    text-decoration: none;
+    display: block;
+    height: 4%;
+    font-size: 10px;
+    horiz-align: center;
+    position: relative;
+}
+
+.referTo a:hover {
+    background-color: gainsboro;
+}
+
+.show {
+    display: block;
+}
+
+.status {
+    margin-top: 51%;
+}
+
+#statusSelect {
+    background: white;
+    color: gray;
+    cursor: pointer;
+    text-align: left;
+    padding-right: 1px;
+    margin-top: 5%;
+    margin-right: 30%;
+    width: 52%;
+    height: 5%;
+    font-size: 10px;
+    border: 1px solid #165761;
+    outline: none;
+    border-radius: 10px;
+    position: absolute;
+    font-family: vazir;
+}
+
+#confirmButton {
+    border-radius: 7px;
+    width: 8%;
+    height: 6%;
+    position: absolute;
+    outline: none;
+    margin-right: 82%;
+    margin-top: 15%;
+    font-family: vazirBold;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.20);
+    background: #143D47;
+    color: white;
+}
+
+#confirmButton:hover {
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.35);
+}
+
+#backButton {
+    border-radius: 7px;
+    text-align: center;
+    width: 6%;
+    height: 4%;
+    position: absolute;
+    outline: none;
+    margin-right: 3%;
+    margin-top: 45%;
+    font-family: vazirBold;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.20);
+    background: none;
+    color: white;
+    border: 1px solid white;
+    font-size: 10px;
+    padding-top: 10px;
+    text-decoration: none;
+}
