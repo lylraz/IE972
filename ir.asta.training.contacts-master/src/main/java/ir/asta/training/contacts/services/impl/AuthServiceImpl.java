@@ -15,12 +15,12 @@ public class AuthServiceImpl implements AuthService {
     @Inject
     private AuthManager manager;
     @Override
-    public ActionResult<UserEntity> register(String username, String password) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        return manager.register(username, password);
+    public ActionResult<UserEntity> register(String fName, String lName, String email, String password ,String rePassword) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        return manager.register(fName, lName, email, password, rePassword);
     }
 
     @Override
-    public ActionResult<UserEntity> login(String username, String password) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        return manager.login(username, password);
+    public ActionResult<UserEntity> login(String email, String password) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        return manager.login(email, password);
     }
 }
