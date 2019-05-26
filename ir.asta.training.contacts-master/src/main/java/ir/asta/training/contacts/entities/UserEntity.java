@@ -12,8 +12,14 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "username")
-    private String username;
+    @Column(name = "fName")
+    private String fName;
+
+    @Column(name = "lName")
+    private String lName;
+
+    @Column(name = "email")
+    private String email;
 
     @Column(name = "password")
     @JsonIgnore
@@ -38,12 +44,28 @@ public class UserEntity {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getfName() {
+        return fName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
+    public String getlName() {
+        return lName;
+    }
+
+    public void setlName(String lName) {
+        this.lName = lName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
