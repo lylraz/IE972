@@ -1,7 +1,5 @@
 package ir.asta.training.contacts.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 
 @Entity
