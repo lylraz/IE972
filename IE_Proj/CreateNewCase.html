@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fa">
     <head>
-        <meta charset="UTF-8">
         <title> ثبت مورد جدید </title>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/global.css">
@@ -24,17 +24,16 @@
                 </li>
                 <li><a href="Cases.html"> موارد </a></li>
                 <li><a href="CreateNewCase.html" class="active"> ثبت مورد جدید </a></li>
-                <li><a href="Status.html"> مشاهده وضعیت </a></li>
+                <li><a href="#contact"> مشاهده وضعیت </a></li>
                 <li><a href="Report.html"> گزارش‌گیری </a></li>
                 <li><a href="UsersStatus.html"> مدیریت کاربران </a></li>
-                <li><a href="UserConfirmation.html"> تایید کاربران </a></li>
                 <li><a href="#exit"> خروج </a></li>
             </ul>
         </div>
 
         <div id="page_container">
             <div class="divContent" id="divContent">
-                <form class="form">
+                <form class="form" method="post" action="http://localhost:8080/contacts/rest/case/createNewCase">
                     <br>
                     <div id="firstInput">
                         <div class="labels"> عنوان </div>
@@ -68,11 +67,10 @@
                             <option value="AghaGhafouri"> آقای غفوری </option>
                         </select>
                     </div>
-
+                    <button type="submit" id="confirmButton"> ثبت </button>
                 </form>
             </div>
 
-            <button type="submit" id="confirmButton" > ثبت </button>
         </div>
 
     </body>
