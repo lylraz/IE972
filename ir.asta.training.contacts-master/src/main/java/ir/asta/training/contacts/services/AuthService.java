@@ -17,12 +17,15 @@ public interface AuthService {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/register")
-    public ActionResult<UserEntity> register(@FormParam("username") String username,
-                                 @FormParam("password") String password) throws UnsupportedEncodingException, NoSuchAlgorithmException;
+    public ActionResult<UserEntity> register(@FormParam("fName") String fName,
+                                             @FormParam("lName") String lName,
+                                             @FormParam("email") String email,
+                                             @FormParam("password") String password,
+                                 @FormParam("rePassword") String rePassword) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/login")
-    public ActionResult<UserEntity> login(@FormParam("username") String username,
+    public ActionResult<UserEntity> login(@FormParam("email") String email,
                                              @FormParam("password") String password) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 }
