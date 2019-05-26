@@ -1,6 +1,6 @@
 package ir.asta.training.contacts.services;
 
-import ir.asta.training.contacts.entities.UserEntity;
+import ir.asta.training.contacts.entities.CaseEntity;
 import ir.asta.wise.core.datamanagement.ActionResult;
 
 import javax.ws.rs.FormParam;
@@ -13,11 +13,11 @@ import javax.ws.rs.core.MediaType;
 public interface CaseService {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/newCase")
-    public ActionResult<UserEntity> newCase(@FormParam("title") String title,
-                                            @FormParam("request") String request,
-                                            @FormParam("requestContent") String requestContent,
-                                            @FormParam("receiverContent") String receiverContent
+    @Path("/createNewCase")
+    public ActionResult<CaseEntity> CreateNewCase(@FormParam("title") String title,
+                                                  @FormParam("request") String request,
+                                                  @FormParam("requestContent") String requestContent,
+                                                  @FormParam("receiverContent") String receiverContent
     );
 }
 
