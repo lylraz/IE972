@@ -12,25 +12,27 @@ import java.util.List;
 public class AuthDAO {
     @PersistenceContext
     private EntityManager entityManager;
-    public UserEntity register(String username, String password, String token){
+    public UserEntity register(String fName, String lName, String email, String password, String token){
         UserEntity entity = new UserEntity();
-        entity.setUsername(username);
+        entity.setfName(fName);
+        entity.setlName(lName);
+        entity.setEmail(email);
         entity.setPassword(password);
         entity.setToken(token);
         entityManager.persist(entity);
         return entity;
     }
 
-    public boolean containsUser(String username){
-        Query query = entityManager.createQuery("select e from UserEntity e where e.username=: username");
-        query.setParameter("username", username);
+    public boolean containsUser(String email){
+        Query query = entityManager.createQuery("select e from UserEntity e where e.email=:email");
+        query.setParameter("email", email);
         List list = query.getResultList();
         return list.size() > 0;
     }
 
-    public UserEntity checkUsernameAndPassword(String username, String password){
-        Query query = entityManager.createQuery("select e from UserEntity e where e.username=: username and e.password=: password");
-        query.setParameter("username", username).setParameter("password", password);
+    public UserEntity checkUsernameAndPassword(String email, String password){
+        Query query = entityManager.createQuery("select e from UserEntity e where e.email=:email and e.password=:password");
+        query.setParameter("email", email).setParameter("password", password);
         List<UserEntity> list = query.getResultList();
         if (list.size() > 0){
             return list.get(0);
