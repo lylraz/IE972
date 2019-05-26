@@ -19,10 +19,10 @@ public class AuthManager {
     private AuthDAO dao;
 
     @Transactional
-    public ActionResult<UserEntity> register(String username, String password) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    public ActionResult<UserEntity> register(String fName, String lName, String email, String password, String rePassword) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         ActionResult<UserEntity> result = new ActionResult<>();
-        if (!dao.containsUser(username)) {
-            result.setData(dao.register(username, hashPassword(password), generateToken()));
+        if (!dao.containsUser(email)) {
+            result.setData(dao.register(fName, lName, email, hashPassword(password), generateToken()));
             result.setSuccess(true);
         }
         else {
@@ -31,8 +31,8 @@ public class AuthManager {
         return result;
     }
 
-    public ActionResult<UserEntity> login(String username, String password) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        UserEntity entity = dao.checkUsernameAndPassword(username, hashPassword(password));
+    public ActionResult<UserEntity> login(String email, String password) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        UserEntity entity = dao.checkUsernameAndPassword(email, hashPassword(password));
         ActionResult<UserEntity> result = new ActionResult<>();
         result.setData(entity);
         if (entity != null){
@@ -40,7 +40,7 @@ public class AuthManager {
             result.setMessage("کاربر وارد شد.");
         }
         else {
-            result.setMessage("یوزر یا پسورد اشتباه است");
+            result.setMessage("ایمیل یا پسورد اشتباه است");
         }
         return result;
     }
