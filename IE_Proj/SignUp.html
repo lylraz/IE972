@@ -10,18 +10,18 @@
 
     <body>
         <div class="signUp_card">
-            <form class="signUp-form">
+            <form class="signUp-form" method="post" action="http://localhost:8080/contacts/rest/auth/register">
                 <span class="signUp_card_logo">
                 <i class="fa fa-globe"></i>
                 </span>
 
                 <div class="input_container">
                     <i class="fa fa-user"></i>
-                    <input class="input-field" type="text" name="f-Name" placeholder="نام">
+                    <input class="input-field" type="text" name="fName" placeholder="نام">
                 </div>
                 <div class="input_container">
                     <i class="fa fa-user"></i>
-                    <input class="input-field" type="text" name="l-Name" placeholder="نام خانوادگی">
+                    <input class="input-field" type="text" name="lName" placeholder="نام خانوادگی">
                 </div>
                 <div class="input_container">
                     <i class="fa fa-envelope"></i>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="input_container">
                     <i class="fa fa-lock"></i>
-                    <input class="input-field" type="password" name="re-password" placeholder="تکرار رمز عبور">
+                    <input class="input-field" type="password" name="rePassword" placeholder="تکرار رمز عبور">
                 </div>
                 <button class="enterButton" type="submit"> ثبت نام </button>
                 <p> قبلا عضو شدید؟<a href="SignIn.html"> ورود </a> </p>
