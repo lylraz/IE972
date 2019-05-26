@@ -1,22 +1,20 @@
 package ir.asta.training.contacts.dao;
 
-import ir.asta.training.contacts.entities.UserEntity;
-
+import ir.asta.training.contacts.entities.CaseEntity;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import java.util.List;
 
-@Named("authDAO")
+@Named("caseDAO")
 public class CaseDAO {
     @PersistenceContext
     private EntityManager entityManager;
-    public UserEntity createNewCase(String username, String password, String token){
-        UserEntity entity = new UserEntity();
-        entity.setUsername(username);
-        entity.setPassword(password);
-        entity.setToken(token);
+    public CaseEntity createNewCase(String title, String request,  String requestContent, String receiverContent){
+        CaseEntity entity = new CaseEntity();
+        entity.setTitle(title);
+        entity.setRequest(request);
+        entity.setRequestContent(requestContent);
+        entity.setReceiverContent(receiverContent);
         entityManager.persist(entity);
         return entity;
     }
