@@ -61,4 +61,24 @@ public class AuthManager {
         }
         return token;
     }
+    
+    public ActionResult<UserEntity> profileEdit(String name, String familyName, String profileName, String email) {
+        UserEntity entity = dao.profileEdit(name, familyName, profileName, email);
+        ActionResult<UserEntity> result = new ActionResult<>();
+        result.setData(entity);
+        result.setSuccess(true);
+        return result;
+    }
+
+    public ActionResult<UserEntity> passwordChange(String email, String password, String newPass, String reNewPass) {
+        ActionResult<UserEntity> result = new ActionResult<>();
+        if (!newPass.equals(reNewPass)) {
+            result.setSuccess(false);
+            result.setMessage("رمز جدید و تکرار آن همخوانی ندارند");
+        }
+        UserEntity entity = dao.passwordChange(email, password, newPass);
+        result.setData(entity);
+        result.setSuccess(true);
+        return result;
+    }
 }
