@@ -28,4 +28,20 @@ public interface AuthService {
     @Path("/login")
     public ActionResult<UserEntity> login(@FormParam("email") String email,
                                              @FormParam("password") String password) throws UnsupportedEncodingException, NoSuchAlgorithmException;
+    
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/profileEdit")
+    public ActionResult<UserEntity> profileEdit(@FormParam("name") String name,
+                                                @FormParam("familyName") String familyName,
+                                                @FormParam("profileName") String profileName,
+                                                @FormParam("email") String email);
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/profileEdit")
+    public ActionResult<UserEntity> passwordChange(String email,
+                                                  @FormParam("password") String password,
+                                                  @FormParam("newPass") String newPass,
+                                                  @FormParam("reNewPass") String reNewPass);
 }
