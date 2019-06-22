@@ -33,14 +33,23 @@
                     <input class="inputs" type="email" placeholder="پاسخ &nbsp" name="answer" id="answer">
                 </div>
 
+<!--                <div class="referTo">-->
+<!--                    <div class="labels"> ارجاع </div>-->
+<!--                    <button onclick="referF()" class="referButton" type="button"> <i class="fa fa-caret-down"></i> </button>-->
+<!--                    <div id="referD" class="referContent">-->
+<!--                        <a>  دکتر شمس‌فرد </a>-->
+<!--                        <a> آقای امینی </a>-->
+<!--                        <a> آقای غقوری </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+
                 <div class="referTo">
                     <div class="labels"> ارجاع </div>
-                    <button onclick="referF()" class="referButton" type="button"> <i class="fa fa-caret-down"></i> </button>
-                    <div id="referD" class="referContent">
-                        <a>  دکتر شمس‌فرد </a>
-                        <a> آقای امینی </a>
-                        <a> آقای غقوری </a>
-                    </div>
+                    <select id="referSelect" name="referContent">
+                        <option value="shams"> دکتر شمس‌فرد </option>
+                        <option value="amini"> آقای امینی </option>
+                        <option value="ghafouri"> آقای غقوری </option>
+                    </select>
                 </div>
 
                 <div class="status">
@@ -52,9 +61,11 @@
                         <option value="postponed"> تعویق </option>
                     </select>
                 </div>
+
+                <button type="submit" id="confirmButton" > ثبت </button>
             </form>
 
-            <button type="submit" id="confirmButton" > ثبت </button>
+
         </div>
     </body>
 
