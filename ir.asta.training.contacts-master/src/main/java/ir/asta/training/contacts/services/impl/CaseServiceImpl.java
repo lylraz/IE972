@@ -17,10 +17,8 @@ public class CaseServiceImpl implements CaseService {
         return manager.CreateNewCase(title, request, requestContent, receiverContent);
     }
     
+    @Override
     public ActionResult<CaseEntity> Action(String title, String answer, String referContent, String statusContent) {
-        ActionResult<CaseEntity> result = new ActionResult<>();
-        result.setData(dao.action(title, answer, referContent, statusContent));
-        result.setSuccess(true);
-        return result;
+        return manager.Action(title,answer,referContent,statusContent);
     }
 }
