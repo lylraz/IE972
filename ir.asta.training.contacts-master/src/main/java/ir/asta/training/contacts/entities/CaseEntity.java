@@ -22,6 +22,15 @@ public class CaseEntity {
     @Column(name = "receiverContent")
     private String receiverContent;
 
+    @Column(name = "answer")
+    private String answer;
+
+    @Column(name = "referContent")
+    private String referContent;
+
+    @Column(name = "statusContent")
+    private String statusContent;
+    
     public long getId() {
         return id;
     }
@@ -60,5 +69,29 @@ public class CaseEntity {
 
     public void setReceiverContent(String receiverContent) {
         this.receiverContent = receiverContent;
+    }
+    
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    public String getReferContent() {
+        return referContent;
+    }
+
+    public void setReferContent(String referContent) {
+        this.referContent = referContent;
+    }
+
+    public String getStatusContent() {
+        return statusContent;
+    }
+
+    public void setStatusContent(String statusContent) {
+        this.statusContent = statusContent;
     }
 }
