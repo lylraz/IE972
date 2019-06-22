@@ -39,5 +39,28 @@ public class AuthDAO {
         }
         return null;
     }
+    
+    public UserEntity profileEdit(String name, String familyName, String profileName, String email) {
+        Query query = entityManager.createQuery("select e from UserEntity e where e.email=:email");
+        query.setParameter("email", email);
+        UserEntity entity = (UserEntity)query.getSingleResult();
+        entity.setfName(name);
+        entity.setlName(familyName);
+        entity.setEmail(email);
+        entity.setProfileName(profileName);
+        entityManager.merge(entity);
+        return entity;
+    }
+
+    public UserEntity passwordChange(String email, String password, String newPass) {
+        Query query = entityManager.createQuery("select e from UserEntity e where e.email=:email");
+        query.setParameter("email", email);
+        UserEntity entity = (UserEntity)query.getSingleResult();
+        if (password.equals(entity.getPassword())) {
+            entity.setPassword(newPass);
+            entityManager.merge(entity);
+        }
+        return entity;
+    }
 
 }
