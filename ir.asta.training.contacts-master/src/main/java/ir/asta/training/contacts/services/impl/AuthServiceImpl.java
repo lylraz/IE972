@@ -23,4 +23,14 @@ public class AuthServiceImpl implements AuthService {
     public ActionResult<UserEntity> login(String email, String password) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         return manager.login(email, password);
     }
+    
+    @Override
+    public ActionResult<UserEntity> profileEdit(String name, String familyName, String profileName, String email) {
+        return manager.profileEdit(name, familyName, profileName, email);
+    }
+
+    @Override
+    public ActionResult<UserEntity> passwordChange(String email, String password, String newPass, String reNewPass) {
+        return manager.passwordChange(email, password, newPass, reNewPass);
+    }
 }
