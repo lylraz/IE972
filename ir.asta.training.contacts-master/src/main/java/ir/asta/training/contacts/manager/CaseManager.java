@@ -19,5 +19,12 @@ public class CaseManager {
         result.setSuccess(true);
         return result;
     }
+    
+    public ActionResult<CaseEntity> Action(String title, String answer, String referContent, String statusContent) {
+        ActionResult<CaseEntity> result = new ActionResult<>();
+        result.setData(dao.action(title, answer, referContent, statusContent));
+        result.setSuccess(true);
+        return result;
+    }
 
 }
