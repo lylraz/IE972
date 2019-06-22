@@ -19,6 +19,15 @@ public interface CaseService {
                                                   @FormParam("requestContent") String requestContent,
                                                   @FormParam("receiverContent") String receiverContent
     );
+    
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/action")
+    public ActionResult<CaseEntity> Action(String title,
+                                           @FormParam("answer") String answer,
+                                           @FormParam("referContent") String referContent,
+                                           @FormParam("statusContent") String statusContent
+    );
 }
 
 
