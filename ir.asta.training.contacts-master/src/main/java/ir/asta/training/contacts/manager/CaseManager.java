@@ -17,6 +17,7 @@ public class CaseManager {
         ActionResult<CaseEntity> result = new ActionResult<>();
         result.setData(dao.createNewCase(title, request, requestContent, receiverContent));
         result.setSuccess(true);
+        result.setMessage("new case created");
         return result;
     }
     
