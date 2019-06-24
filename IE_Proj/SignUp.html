@@ -12,7 +12,7 @@
 
 <body>
 <div class="signUp_card">
-    <form class="signUp-form" method="post" action="http://localhost:8080/contacts/rest/auth/register">
+    <form class="signUp-form">
                 <span class="signUp_card_logo">
                 <i class="fa fa-globe"></i>
                 </span>
@@ -37,11 +37,9 @@
             <i class="fa fa-lock"></i>
             <input class="input-field" type="password" name="rePassword" id="rePassword" placeholder="تکرار رمز عبور">
         </div>
-        <!--<button class="enterButton" type="submit"> ثبت نام</button>-->
-        <p> قبلا عضو شدید؟<a href="SignIn.html"> ورود </a></p>
     </form>
-    <button class="enterButton" onclick="register();">ثبت نام</button>
-
+    <button class="enterButton" onclick="register();" type="button">ثبت نام</button>
+    <p> قبلا عضو شدید؟<a href="SignIn.html"> ورود </a></p>
 </div>
 </body>
 </html>
