@@ -28,6 +28,9 @@ public interface CaseService {
                                            @FormParam("referContent") String referContent,
                                            @FormParam("statusContent") String statusContent
     );
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/Cases")
+    public ActionResult Cases(String email);
 }
-
-
