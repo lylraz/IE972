@@ -26,5 +26,21 @@ public class CaseManager {
         result.setSuccess(true);
         return result;
     }
+    
+    @Transactional
+    public ActionResult Cases(String email) {
+        ActionResult result = new ActionResult<>();
+        if (dao.Cases(email) == null) {
+            result.setSuccess(false);
+            result.setMessage("موردی یافت نشد");
+        }
+        else {
+            result.setSuccess(true);
+            result.setMessage("مورد ها یافت شد");
+            result.setData(dao.Cases(email));
+
+        }
+        return result;
+    }
 
 }
