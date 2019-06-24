@@ -3,16 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <title> اقدام </title>
-        <script src="jquery.min.js"></script>
+<!--        <script src="jquery.min.js"></script>-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/Action.css">
-        <script type="text/javascript" src="javascript/Action.js"> </script>
-        <script type="text/javascript" src="data.json"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="javascript/Action.js" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--        <script type="text/javascript" src="data.json"></script>-->
     </head>
 
     <body>
-        <a href="Cases.html" id="backButton" > بازگشت </a>
+        <a href="Cases.html" id="backButton"> بازگشت </a>
         <div class="divContent">
             <form class="form">
                 <br>
@@ -61,11 +62,8 @@
                         <option value="postponed"> تعویق </option>
                     </select>
                 </div>
-
-                <button type="submit" id="confirmButton" > ثبت </button>
             </form>
-
-
+            <button type="button" id="confirmButton" onclick="action()"> ثبت </button>
         </div>
     </body>
 
