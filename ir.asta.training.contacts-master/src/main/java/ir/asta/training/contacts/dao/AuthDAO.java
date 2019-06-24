@@ -62,5 +62,12 @@ public class AuthDAO {
         }
         return entity;
     }
+    
+    public List<UserEntity> userConfirmation() {
+        Query query = entityManager.createQuery("select e from UserEntity e where e.confirmation=:notConfirmed");
+        query.setParameter("notConfirmed", "notConfirmed");
+        List<UserEntity> list = query.getResultList();
+        return list;
+    }
 
 }
