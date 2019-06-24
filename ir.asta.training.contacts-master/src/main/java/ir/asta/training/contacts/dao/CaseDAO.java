@@ -40,5 +40,11 @@ public class CaseDAO {
         List<CaseEntity> list = query.getResultList();
         return list;
     }
+    
+    public List<CaseEntity> report(){
+        Query query = entityManager.createQuery("select c from CaseEntity c");
+        List<CaseEntity> list = query.getResultList();
+        return list;
+    }
 
 }
