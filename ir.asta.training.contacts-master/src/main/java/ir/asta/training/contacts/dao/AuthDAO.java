@@ -19,6 +19,7 @@ public class AuthDAO {
         entity.setEmail(email);
         entity.setPassword(password);
         entity.setToken(token);
+        entity.setConfirmation("notConfirmed");
         entityManager.persist(entity);
         return entity;
     }
