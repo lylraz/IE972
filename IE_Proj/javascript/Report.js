@@ -12,39 +12,38 @@ $(document).ready(function () {
     }
     $.ajax(settings).done(function (response) {
         console.log(response);
-        alert(response.message);
         if (response.success) {
             var adminPost = 0, memberPost = 0, criticism = 0, suggestion= 0, complaint = 0, request = 0, open = 0, inQueue = 0, postponed = 0, closed = 0, satisfied = 0, notSatisfied = 0;
-            for(var i = 0; i < response.length; i++) {
-                if (response[i].role !== "کاربر عادی") {
+            for(var i = 0; i < response.data.length; i++) {
+                if (response.data[i].role !== "کاربر عادی") {
                     adminPost++;
                 } else {
                     memberPost++;
                 }
 
-                if (response[i].kind === "انتقاد") {
+                if (response.data[i].kind === "انتقاد") {
                     criticism++;
-                } else if (response[i].kind === "پیشنهاد") {
+                } else if (response.data[i].kind === "پیشنهاد") {
                     suggestion++;
-                } else if (response[i].kind === "شکایت") {
+                } else if (response.data[i].kind === "شکایت") {
                     complaint++;
                 } else {
                     request++;
                 }
 
-                if (response[i].status === "باز") {
+                if (response.data[i].status === "باز") {
                     open++;
-                } else if (response[i].status === "در حال بررسی") {
+                } else if (response.data[i].status === "در حال بررسی") {
                     inQueue++;
-                } else if (response[i].status === "تعویق") {
+                } else if (response.data[i].status === "تعویق") {
                     postponed++;
                 } else {
                     closed++;
                 }
 
-                if (response[i].status === "راضی") {
+                if (response.data[i].status === "راضی") {
                     satisfied++;
-                } else  if (response[i].status === "ناراضی"){
+                } else  if (response.data[i].status === "ناراضی"){
                     notSatisfied++;
                 }
             }
