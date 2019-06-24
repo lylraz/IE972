@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="fa">
-    <head>
-        <title>ثبت نام</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/global.css">
-        <link rel="stylesheet" href="css/SignIn_SignUp.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
+<head>
+    <title>ثبت نام</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/SignIn_SignUp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript/SignInSignUp.js" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
 
-    <body>
-        <div class="signUp_card">
-            <form class="signUp-form" method="post" action="http://localhost:8080/contacts/rest/auth/register">
+<body>
+<div class="signUp_card">
+    <form class="signUp-form" method="post" action="http://localhost:8080/contacts/rest/auth/register">
                 <span class="signUp_card_logo">
                 <i class="fa fa-globe"></i>
                 </span>
 
-                <div class="input_container">
-                    <i class="fa fa-user"></i>
-                    <input class="input-field" type="text" name="fName" placeholder="نام">
-                </div>
-                <div class="input_container">
-                    <i class="fa fa-user"></i>
-                    <input class="input-field" type="text" name="lName" placeholder="نام خانوادگی">
-                </div>
-                <div class="input_container">
-                    <i class="fa fa-envelope"></i>
-                    <input class="input-field" type="text" name="email" placeholder="پست الکترونیک">
-                </div>
-                <div class="input_container">
-                    <i class="fa fa-lock"></i>
-                    <input class="input-field" type="password" name="password" placeholder="رمز عبور">
-                </div>
-                <div class="input_container">
-                    <i class="fa fa-lock"></i>
-                    <input class="input-field" type="password" name="rePassword" placeholder="تکرار رمز عبور">
-                </div>
-                <button class="enterButton" type="submit"> ثبت نام </button>
-                <p> قبلا عضو شدید؟<a href="SignIn.html"> ورود </a> </p>
-            </form>
+        <div class="input_container">
+            <i class="fa fa-user"></i>
+            <input class="input-field" type="text" name="fName" id="fName" placeholder="نام">
         </div>
-    </body>
+        <div class="input_container">
+            <i class="fa fa-user"></i>
+            <input class="input-field" type="text" name="lName" id="lName" placeholder="نام خانوادگی">
+        </div>
+        <div class="input_container">
+            <i class="fa fa-envelope"></i>
+            <input class="input-field" type="text" name="email" id="email" placeholder="پست الکترونیک">
+        </div>
+        <div class="input_container">
+            <i class="fa fa-lock"></i>
+            <input class="input-field" type="password" name="password" id="password" placeholder="رمز عبور">
+        </div>
+        <div class="input_container">
+            <i class="fa fa-lock"></i>
+            <input class="input-field" type="password" name="rePassword" id="rePassword" placeholder="تکرار رمز عبور">
+        </div>
+        <!--<button class="enterButton" type="submit"> ثبت نام</button>-->
+        <p> قبلا عضو شدید؟<a href="SignIn.html"> ورود </a></p>
+    </form>
+    <button class="enterButton" onclick="register();">ثبت نام</button>
+
+</div>
+</body>
 </html>
