@@ -13,8 +13,8 @@ public class CaseServiceImpl implements CaseService {
     private CaseManager manager;
 
     @Override
-    public ActionResult<CaseEntity> CreateNewCase(String title, String request, String requestContent, String receiverContent) {
-        return manager.CreateNewCase(title, request, requestContent, receiverContent);
+    public ActionResult<CaseEntity> CreateNewCase(String title, String sender, String request, String requestContent, String receiverContent) {
+        return manager.CreateNewCase(title,sender, request, requestContent, receiverContent);
     }
     
     @Override
