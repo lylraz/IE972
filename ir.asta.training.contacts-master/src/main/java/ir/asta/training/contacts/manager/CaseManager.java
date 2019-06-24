@@ -42,5 +42,18 @@ public class CaseManager {
         }
         return result;
     }
+    
+    public ActionResult Report() {
+        ActionResult result = new ActionResult<>();
+        if (dao.report() == null) {
+            result.setSuccess(false);
+            result.setMessage("report case fail");
+        } else {
+            result.setData(dao.report());
+            result.setSuccess(true);
+            result.setMessage("report case success");
+        }
+        return result;
+    }
 
 }
