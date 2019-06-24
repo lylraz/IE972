@@ -32,10 +32,11 @@ public interface AuthService {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/profileEdit")
-    public ActionResult<UserEntity> profileEdit(@FormParam("name") String name,
+    public ActionResult<UserEntity> profileEdit(String email,
+                                                @FormParam("name") String name,
                                                 @FormParam("familyName") String familyName,
                                                 @FormParam("profileName") String profileName,
-                                                @FormParam("email") String email);
+                                                @FormParam("newEmail") String newEmail);
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
