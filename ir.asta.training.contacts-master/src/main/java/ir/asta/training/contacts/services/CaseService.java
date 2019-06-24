@@ -33,4 +33,9 @@ public interface CaseService {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/Cases")
     public ActionResult Cases(String email);
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/report")
+    public ActionResult Report();
 }
