@@ -1,10 +1,12 @@
 package ir.asta.training.contacts.dao;
 
 import ir.asta.training.contacts.entities.CaseEntity;
+
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import java.util.List;
 
 @Named("caseDAO")
 public class CaseDAO {
@@ -30,6 +32,13 @@ public class CaseDAO {
         entity.setStatusContent(statusContent);
         entityManager.merge(entity);
         return entity;
+    }
+    
+    public List<CaseEntity> Cases(String email) {
+        Query query = entityManager.createQuery("select e from CaseEntity e where e.email=:email");
+        query.setParameter("email", email);
+        List<CaseEntity> list = query.getResultList();
+        return list;
     }
 
 }
