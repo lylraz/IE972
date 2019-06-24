@@ -47,11 +47,11 @@ public class CaseManager {
         ActionResult result = new ActionResult<>();
         if (dao.report() == null) {
             result.setSuccess(false);
-            result.setMessage("report case fail");
+            result.setMessage("report fail");
         } else {
             result.setData(dao.report());
             result.setSuccess(true);
-            result.setMessage("report case success");
+            result.setMessage("report success");
         }
         return result;
     }
