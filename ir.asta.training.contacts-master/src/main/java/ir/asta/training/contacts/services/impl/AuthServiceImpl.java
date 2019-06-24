@@ -25,8 +25,8 @@ public class AuthServiceImpl implements AuthService {
     }
     
     @Override
-    public ActionResult<UserEntity> profileEdit(String name, String familyName, String profileName, String email) {
-        return manager.profileEdit(name, familyName, profileName, email);
+    public ActionResult<UserEntity> profileEdit(String email, String name, String familyName, String profileName, String newEmail) {
+        return manager.profileEdit(email, name, familyName, profileName, newEmail);
     }
 
     @Override
