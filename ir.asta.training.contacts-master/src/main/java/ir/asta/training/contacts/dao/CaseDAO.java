@@ -24,6 +24,8 @@ public class CaseDAO {
     }
     
     public CaseEntity action(String title, String answer, String referContent, String statusContent){
+        Query query1 = entityManager.createQuery("select e from UserEntity e where e.fName=:referContent");
+        query1.setParameter("referContent", referContent);
         Query query = entityManager.createQuery("select c from CaseEntity c where c.title=:title");
         query.setParameter("title", title);
         CaseEntity entity = (CaseEntity)query.getSingleResult();
