@@ -26,12 +26,12 @@ public interface CaseService {
                                            @FormParam("statusContent") String statusContent
     );
     
-    @GET
+    @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/Cases")
     public ActionResult Cases(String email);
     
-    @GET
+    @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/report")
     public ActionResult Report();
