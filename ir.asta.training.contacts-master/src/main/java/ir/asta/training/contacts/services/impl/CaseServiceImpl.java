@@ -21,4 +21,9 @@ public class CaseServiceImpl implements CaseService {
     public ActionResult<CaseEntity> Action(String title, String answer, String referContent, String statusContent) {
         return manager.Action(title,answer,referContent,statusContent);
     }
+    
+    @Override
+    public ActionResult Cases(String email) {
+        return manager.Cases(email);
+    }
 }
