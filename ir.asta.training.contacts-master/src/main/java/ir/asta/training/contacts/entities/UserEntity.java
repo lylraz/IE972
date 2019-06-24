@@ -30,6 +30,12 @@ public class UserEntity {
     
     @Column(name = "profileName")
     private String profileName;
+    
+    @Column(name = "role")
+    private String role;
+
+    @Column(name = "confirmation")
+    private String confirmation;
 
     public String getToken() {
         return token;
@@ -85,5 +91,21 @@ public class UserEntity {
 
     public void setProfileName(String profileName) {
         this.profileName = profileName;
+    }
+    
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getConfirmation() {
+        return confirmation;
+    }
+
+    public void setConfirmation(String confirmation) {
+        this.confirmation = confirmation;
     }
 }
