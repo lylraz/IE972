@@ -34,11 +34,11 @@
 
         <div id="page_container">
             <div class="divContent" id="divContent">
-                <form class="form" method="post" action="http://localhost:8080/contacts/rest/case/createNewCase">
+                <div class="form">
                     <br>
                     <div id="firstInput">
                         <div class="labels"> عنوان </div>
-                        <input class="inputs" type="text" placeholder="عنوان &nbsp" name="title">
+                        <input class="inputs" type="text" placeholder="عنوان &nbsp" name="title" id="title">
                     </div>
                     <div id="secondInput">
                         <div class="labels" id="textLabel"> متن درخواست </div>
@@ -68,10 +68,9 @@
                             <option value="AghaGhafouri"> آقای غفوری </option>
                         </select>
                     </div>
-                    <button type="button" id="confirmButton" onclick="createNewCase()"> ثبت </button>
-                </form>
+                    <button type="button" id="confirmButton" onclick="NewCase();"> ثبت </button>
+                </div>
             </div>
-
         </div>
 
     </body>
