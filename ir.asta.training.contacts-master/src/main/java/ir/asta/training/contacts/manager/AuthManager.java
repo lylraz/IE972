@@ -65,8 +65,14 @@ public class AuthManager {
     public ActionResult<UserEntity> profileEdit(String name, String familyName, String profileName, String email) {
         UserEntity entity = dao.profileEdit(name, familyName, profileName, email);
         ActionResult<UserEntity> result = new ActionResult<>();
-        result.setData(entity);
-        result.setSuccess(true);
+        if (entity != null){
+            result.setData(entity);
+            result.setSuccess(true);
+            result.setMessage("profile edit success");
+        }
+        else {
+            result.setMessage("ایمیل یا پسورد اشتباه است");
+        }
         return result;
     }
 
@@ -75,10 +81,12 @@ public class AuthManager {
         if (!newPass.equals(reNewPass)) {
             result.setSuccess(false);
             result.setMessage("رمز جدید و تکرار آن همخوانی ندارند");
+        } else {
+            UserEntity entity = dao.passwordChange(email, password, newPass);
+            result.setData(entity);
+            result.setSuccess(true);
+            result.setMessage("pass success");
         }
-        UserEntity entity = dao.passwordChange(email, password, newPass);
-        result.setData(entity);
-        result.setSuccess(true);
         return result;
     }
 }
