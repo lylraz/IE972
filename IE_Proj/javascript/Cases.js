@@ -1,7 +1,5 @@
 $(document).ready(function () {
     $.getJSON("data.json",function (jd) {
-
-
         for(var i = 0 ; i < jd.requests.length ; i++){
             $('<div class="case-container" onclick="open_case(this.id);">' +
                 '<div class="left-side">' +
@@ -9,13 +7,14 @@ $(document).ready(function () {
                 '<span class="sender"><p class="t">ارسال کننده:</p><p class="user"></p></span>' +
                 '<span class="date-container"><p class="date">تاریخ:</p><p class="case-date"></p></span>' +
                 '<div class="content"><div class="text"><p class="ti">متن درخواست:</p><p class="case-content"></p></div>' +
-                '<div class="button-container"><button onclick="goToCaseActionPage();" class="action-button"> اقدام </button></div></div>' +
+                '<div class="button-container"><button class="action-button" onclick="goToCaseActionPage(this.id);"> اقدام </button></div></div>' +
                 '</div>' +
                 '<div class="case-title "><p class="type"></p></div>' +
                 '</div>'
             ).appendTo('#page_container');
         }
         //update
+        var act = document.getElementsByClassName("action-button"); //دکمه
         var sub = document.getElementsByClassName("user-subject"); // وارد کردن عناوین
         var senders = document.getElementsByClassName("user"); // وارد کردن اسامی
         var divs = document.getElementsByClassName("case-title"); // case title
@@ -30,12 +29,13 @@ $(document).ready(function () {
             types[i].innerHTML = jd.requests[i].kind;
             texts[i].innerHTML = jd.requests[i].text;
             case_id[i].id = i;
+            act[i].id = "btn" + i;
 
             if (jd.requests[i].kind === "شکایت") {
                 divs[i].className += " s";
             } else if (jd.requests[i].kind === "انتقاد"){
                 divs[i].className += " e";
-            } else if (jd.requests[i].kind === "پیشنهاد"){
+            } else if (jd.requests[i].kind === "یشنهاد"){
                 divs[i].className += " p";
             }
             else{
@@ -44,20 +44,6 @@ $(document).ready(function () {
         }
     })
 });
-
-// alert(userID);
-//
-// $(document).ready(function () {
-//     $.getJSON("data.json",function (jdata) {
-//         if (jdata.members[i].role !== "کاربر عادی") {
-//             alert("jjj");
-//             $('<li><a href="Report.html"> گزارش‌گیری </a></li>\n' +
-//                 '<li><a href="UsersStatus.html"> مدیریت کاربران </a></li>\n' +
-//                 '<li><a href="UserConfirmation.html"> تایید کاربران </a></li>'
-//             ).appendTo('#nav');
-//         }
-//     })
-// });
 
 function close_nav(){
     nav = document.getElementById("nav_bar");
@@ -101,6 +87,12 @@ function open_case(clicked_id) {
     }
 }
 
-function goToCaseActionPage() {
+function goToCaseActionPage(clicked_id) {
+    var id = clicked_id.toString().lastIndexOf('n');
+    var newId = clicked_id.toString().substr(id+1);
+    elem = document.getElementById(newId);
+    localStorage.setItem("title", elem.children[0].children[0].children[1].innerHTML);
+    localStorage.setItem("sender", elem.children[0].children[1].children[1].innerHTML);
+    localStorage.setItem("request", elem.children[0].children[3].children[0].children[1].innerHTML);
     window.location = "Action.html" ;
 }
