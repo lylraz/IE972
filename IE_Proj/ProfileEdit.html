@@ -8,7 +8,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" href="css/ProfileEdit.css">
-        <script type="text/javascript" src="javascript/ProfileEdit.js"> </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="javascript/ProfileEdit.js" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     </head>
 
     <body onload="document.getElementById('defaultTab').click()">
@@ -31,19 +32,19 @@
                 <br>
                 <div id="firstInput">
                     <div class="labels"> نام </div>
-                    <input class="inputs" type="text" placeholder="نام &nbsp" name="name">
+                    <input class="inputs" type="text" placeholder="نام &nbsp" name="name" id="name">
                 </div>
                 <div id="secondInput">
                     <div class="labels"> نام خانوادگی </div>
-                    <input class="inputs" type="text" placeholder="نام خانوادگی &nbsp" name="familyName">
+                    <input class="inputs" type="text" placeholder="نام خانوادگی &nbsp" name="familyName" id="familyName">
                 </div>
                 <div id="thirdInput">
                     <div class="labels"> نام کاربری </div>
-                    <input class="inputs" type="text" placeholder="نام کاربری &nbsp" name="profileName">
+                    <input class="inputs" type="text" placeholder="نام کاربری &nbsp" name="profileName" id="profileName">
                 </div>
                 <div id="fourthInput">
                     <div class="labels"> پست الکترونیکی </div>
-                    <input class="inputs" type="email" placeholder="پست الکترونیکی &nbsp" name="email">
+                    <input class="inputs" type="email" placeholder="پست الکترونیکی &nbsp" name="email" id="newEmail">
                 </div>
             </form>
         </div>
@@ -53,25 +54,25 @@
                 <br>
                 <div id="firstPass">
                     <div class="labels"> رمز عبور فعلی </div>
-                    <input class="inputs" type="password" placeholder="رمز عبور فعلی &nbsp" name="password">
+                    <input class="inputs" type="password" placeholder="رمز عبور فعلی &nbsp" name="password" id="password">
                 </div>
                 <div id="secondPass">
                     <div class="labels"> رمز عبور جدید </div>
-                    <input class="inputs" type="password" placeholder="رمز عبور جدید &nbsp" name="newPass">
+                    <input class="inputs" type="password" placeholder="رمز عبور جدید &nbsp" name="newPass" id="newPass">
                 </div>
                 <div id="thirdPass">
                     <div class="labels"> تکرار رمز عبور جدید </div>
-                    <input class="inputs" type="password" placeholder="تکرار رمز عبور جدید &nbsp" name="reNewPass">
+                    <input class="inputs" type="password" placeholder="تکرار رمز عبور جدید &nbsp" name="reNewPass" id="reNewPass">
                 </div>
                 <br>
                 <br>
                 <br>
                 <br>
-                <button type="submit" id="passButton" > تایید </button>
+                <button type="button" id="passButton" onclick="passChange()"> تایید </button>
             </form>
         </div>
 
-        <button type="submit" id="confirmButton"> تایید </button>
+        <button type="button" id="confirmButton" onclick="profileEdit()"> تایید </button>
         <a onclick="backB()" id="backButton"> بازگشت </a>
 
     <script>
