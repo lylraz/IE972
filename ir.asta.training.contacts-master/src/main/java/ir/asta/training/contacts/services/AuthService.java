@@ -44,4 +44,9 @@ public interface AuthService {
                                                   @FormParam("password") String password,
                                                   @FormParam("newPass") String newPass,
                                                   @FormParam("reNewPass") String reNewPass);
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/userConfirmation")
+    public ActionResult userConfirmation();
 }
