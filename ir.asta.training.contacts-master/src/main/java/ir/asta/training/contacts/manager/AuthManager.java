@@ -62,8 +62,8 @@ public class AuthManager {
         return token;
     }
     
-    public ActionResult<UserEntity> profileEdit(String name, String familyName, String profileName, String email) {
-        UserEntity entity = dao.profileEdit(name, familyName, profileName, email);
+    public ActionResult<UserEntity> profileEdit(String email, String name, String familyName, String profileName, String newEmail) {
+        UserEntity entity = dao.profileEdit(email, name, familyName, profileName, newEmail);
         ActionResult<UserEntity> result = new ActionResult<>();
         if (entity != null){
             result.setData(entity);
