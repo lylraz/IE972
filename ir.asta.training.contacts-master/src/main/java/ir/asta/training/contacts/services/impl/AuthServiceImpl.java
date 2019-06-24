@@ -33,4 +33,9 @@ public class AuthServiceImpl implements AuthService {
     public ActionResult<UserEntity> passwordChange(String email, String password, String newPass, String reNewPass) {
         return manager.passwordChange(email, password, newPass, reNewPass);
     }
+    
+    @Override
+    public ActionResult userConfirmation() {
+        return manager.userConfirmation();
+    }
 }
