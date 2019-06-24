@@ -12,7 +12,10 @@ public class CaseEntity {
 
     @Column(name = "title")
     private String title;
-
+    
+    @Column(name = "sender")
+    private String sender;
+    
     @Column(name = "request")
     private String request;
 
@@ -42,7 +45,16 @@ public class CaseEntity {
     public String getTitle() {
         return title;
     }
+    
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
 
+    public String getSender() {
+        return sender;
+    }
+
+    
     public void setTitle(String title) {
         this.title = title;
     }
