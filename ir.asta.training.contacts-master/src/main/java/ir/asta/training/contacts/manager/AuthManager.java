@@ -89,4 +89,19 @@ public class AuthManager {
         }
         return result;
     }
+    
+    public ActionResult userConfirmation() {
+        List<UserEntity> entity = dao.userConfirmation();
+        ActionResult result = new ActionResult<>();
+        result.setData(entity);
+        if (entity != null){
+            result.setSuccess(true);
+            result.setMessage("userConfirmation success");
+        }
+        else {
+            result.setSuccess(false);
+            result.setMessage("userConfirmation fail");
+        }
+        return result;
+    }
 }
