@@ -13,13 +13,17 @@ public class CaseManager {
     private CaseDAO dao;
 
     @Transactional
-    public ActionResult<CaseEntity> CreateNewCase(String title, String request,  String requestContent, String receiverContent) {
+    public ActionResult<CaseEntity> CreateNewCase(String title, String sender ,String request,  String requestContent, String receiverContent) {
         ActionResult<CaseEntity> result = new ActionResult<>();
-        result.setData(dao.createNewCase(title, request, requestContent, receiverContent));
-        result.setSuccess(true);
-        result.setMessage("new case created");
+        if(title == null || sender == null || request == null || requestContent == null || receiverContent == null){
+            result.setMessage("همه ی فیلد ها پر شود");
+        }
+        else {
+            result.setData(dao.createNewCase(title, sender, request, requestContent, receiverContent));
+            result.setSuccess(true);
+            result.setMessage("مورد جدید ساخته شد");
+        }
         return result;
-    }
     
     public ActionResult<CaseEntity> Action(String title, String answer, String referContent, String statusContent) {
         ActionResult<CaseEntity> result = new ActionResult<>();
