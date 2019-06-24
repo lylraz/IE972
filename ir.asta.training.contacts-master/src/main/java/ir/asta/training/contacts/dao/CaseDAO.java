@@ -13,9 +13,10 @@ public class CaseDAO {
     @PersistenceContext
     private EntityManager entityManager;
     
-    public CaseEntity createNewCase(String title, String request,  String requestContent, String receiverContent){
+    public CaseEntity createNewCase(String title, String sender, String request,  String requestContent, String receiverContent){
         CaseEntity entity = new CaseEntity();
         entity.setTitle(title);
+        entity.setSender(sender);
         entity.setRequest(request);
         entity.setRequestContent(requestContent);
         entity.setReceiverContent(receiverContent);
