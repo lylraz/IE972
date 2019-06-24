@@ -12,6 +12,7 @@ public interface CaseService {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/createNewCase")
     public ActionResult<CaseEntity> CreateNewCase(@FormParam("title") String title,
+                                                  @FormParam("sender")  String sender,
                                                   @FormParam("request") String request,
                                                   @FormParam("requestContent") String requestContent,
                                                   @FormParam("receiverContent") String receiverContent
