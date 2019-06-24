@@ -22,8 +22,14 @@ public class CaseManager {
     
     public ActionResult<CaseEntity> Action(String title, String answer, String referContent, String statusContent) {
         ActionResult<CaseEntity> result = new ActionResult<>();
-        result.setData(dao.action(title, answer, referContent, statusContent));
-        result.setSuccess(true);
+        if (dao.action(title, answer, referContent, statusContent) == null) {
+            result.setSuccess(false);
+            result.setMessage("action fail");
+        } else {
+            result.setData(dao.action(title, answer, referContent, statusContent));
+            result.setSuccess(true);
+            result.setMessage("action done");
+        }
         return result;
     }
     
