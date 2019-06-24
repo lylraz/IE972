@@ -41,13 +41,13 @@ public class AuthDAO {
         return null;
     }
     
-    public UserEntity profileEdit(String name, String familyName, String profileName, String email) {
+    public UserEntity profileEdit(String email, String name, String familyName, String profileName, String newEmail) {
         Query query = entityManager.createQuery("select e from UserEntity e where e.email=:email");
         query.setParameter("email", email);
         UserEntity entity = (UserEntity)query.getSingleResult();
         entity.setfName(name);
         entity.setlName(familyName);
-        entity.setEmail(email);
+        entity.setEmail(newEmail);
         entity.setProfileName(profileName);
         entityManager.merge(entity);
         return entity;
